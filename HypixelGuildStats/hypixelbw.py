@@ -1,11 +1,11 @@
 import requests, math
 import functions
-from secret import *
+import secrets
 
 
-API_KEY = uwusakura
-API_KEY2 = uwutech
-API_KEY3 = steven
+API_KEY = secrets.uwusakura
+API_KEY2 = secrets.uwutech
+API_KEY3 = secrets.steven
 
 
 def get_guild_bwLvl(name, username):    

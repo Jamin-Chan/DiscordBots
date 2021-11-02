@@ -1,11 +1,11 @@
 import requests, math, functions
 import time
-from secret import *
+import secrets
 
 
-API_KEY = uwusakura
-API_KEY2 = uwutech
-API_KEY3 = steven
+API_KEY = secrets.uwusakura
+API_KEY2 = secrets.uwutech
+API_KEY3 = secrets.steven
 
 # These are just values used to calculate the level (don't worry about them too much)
 BASE = 10_000

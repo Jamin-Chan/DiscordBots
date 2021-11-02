@@ -6,7 +6,7 @@ import hypixel, hypixelbw, hypixelsw
 import functions
 from discord.ext import commands
 from keep_alive import keep_alive
-from secret import *
+import secrets
 
 
 client = commands.Bot(command_prefix = '^')
@@ -513,5 +513,5 @@ async def guildbw(ctx, name, arg):
 
 
 keep_alive()
-my_secret = TOKEN
+my_secret = secrets.TOKEN
 client.run(my_secret)
