@@ -6,13 +6,13 @@ from keep_alive import keep_alive
 import functions
 import requests
 import datetime
-from secrets import *
+import secrets
 
 client = commands.Bot(command_prefix = '&')
 client.remove_command("help")
-API_KEY = uwusakura
-API_KEY2 = uwutech
-API_KEY3 = steven
+API_KEY = secrets.uwusakura
+API_KEY2 = secrets.uwutech
+API_KEY3 = secrets.steven
 
 
 @client.event
@@ -362,5 +362,5 @@ async def getdaily(ctx, *guild):
 
 
 keep_alive()
-my_secret = TOKEN
+my_secret = secrets.TOKEN
 client.run(my_secret)
