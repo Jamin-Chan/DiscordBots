@@ -1,10 +1,10 @@
 import requests
-import os
+from secrets import *
 
 
-API_KEY =  str(os.environ['uwusakura'])
-API_KEY2 = str(os.environ['uwutech'])
-API_KEY3 = str(os.environ['steven'])
+API_KEY = uwusakura
+API_KEY2 = uwutech
+API_KEY3 = steven
 
 
 def get_guildInfo(guildName):

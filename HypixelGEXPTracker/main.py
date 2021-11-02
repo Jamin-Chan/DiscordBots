@@ -2,18 +2,18 @@
 
 import discord
 from discord.ext import commands
-import os
 from keep_alive import keep_alive
 import functions
 import requests
 import datetime
-
+from secrets import *
 
 client = commands.Bot(command_prefix = '&')
 client.remove_command("help")
-API_KEY =  str(os.environ['uwusakura'])
-API_KEY2 = str(os.environ['uwutech'])
-API_KEY3 = str(os.environ['steven'])
+API_KEY = uwusakura
+API_KEY2 = uwutech
+API_KEY3 = steven
+
 
 @client.event
 async def on_ready():
@@ -362,5 +362,5 @@ async def getdaily(ctx, *guild):
 
 
 keep_alive()
-my_secret = os.environ['TOKEN']
+my_secret = TOKEN
 client.run(my_secret)
