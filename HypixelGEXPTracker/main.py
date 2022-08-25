@@ -5,14 +5,15 @@ from discord.ext import commands
 from keep_alive import keep_alive
 import functions
 import requests
-import datetime
+import datetime, time
 import secrets
+import functools
 
 client = commands.Bot(command_prefix = '&')
 client.remove_command("help")
-API_KEY = secrets.uwusakura
+
 API_KEY2 = secrets.uwutech
-API_KEY3 = secrets.steven
+
 
 
 @client.event
@@ -41,6 +42,7 @@ async def help(ctx):
 
     await ctx.send(embed=helpEmbed) 
 
+@functools.lru_cache()
 @client.command()
 async def getweekly(ctx, *guild):
   sorter = []
@@ -72,14 +74,10 @@ async def getweekly(ctx, *guild):
       exp = 0
       memberUuid = member["uuid"]
 
-      
-      if counter % 3 == 0:
-        person = f"https://api.hypixel.net/player?key={API_KEY}&uuid={memberUuid}"
-      elif counter % 2 == 0:
-        person = f"https://api.hypixel.net/player?key={API_KEY2}&uuid={memberUuid}"
-      else:
-        person = f"https://api.hypixel.net/player?key={API_KEY3}&uuid={memberUuid}"
-      
+      person = f"https://api.hypixel.net/player?key={API_KEY2}&uuid={memberUuid}"
+      if(guildSize > 110):
+        time.sleep(0.1)
+
       counter += 1
       
       res = requests.get(person)
@@ -210,7 +208,7 @@ async def getName(ctx, uuid):
   await ctx.send(name)
 
 
-
+@functools.lru_cache()
 @client.command()
 async def getdaily(ctx, *guild):
   sorter = []
@@ -226,6 +224,8 @@ async def getdaily(ctx, *guild):
   try:
     memberList = guildInfo["guild"]["members"]
     estTime = functions.get_number_of_elements(memberList)
+    guildName = guildInfo["guild"]["name"]
+    guildSize = len(memberList)
     await ctx.send("estimated time: " + str(estTime/6) + " seconds")
   except:
     await ctx.send("**" + guildName + "**" + " IS NOT A GUILD MONKE")
@@ -236,13 +236,9 @@ async def getdaily(ctx, *guild):
       exp = 0
       memberUuid = member["uuid"]
 
-      
-      if counter % 3 == 0:
-        person = f"https://api.hypixel.net/player?key={API_KEY}&uuid={memberUuid}"
-      elif counter % 2 == 0:
-        person = f"https://api.hypixel.net/player?key={API_KEY2}&uuid={memberUuid}"
-      else:
-        person = f"https://api.hypixel.net/player?key={API_KEY3}&uuid={memberUuid}"
+      person = f"https://api.hypixel.net/player?key={API_KEY2}&uuid={memberUuid}"
+      if(guildSize > 110)
+        time.sleep(0.1)
       
       counter += 1
       
