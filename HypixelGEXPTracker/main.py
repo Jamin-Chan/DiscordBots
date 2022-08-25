@@ -1,4 +1,4 @@
-#Jamin's discord bot (uwutech)
+#Jamin's discord bot (monketech)
 
 import discord
 from discord.ext import commands
@@ -38,7 +38,7 @@ async def help(ctx):
     helpEmbed.set_thumbnail(url = 'https://cdn.discordapp.com/attachments/898736814658035712/902975179456643092/uwutech.PNG')
 
     numServers = len(client.guilds)
-    helpEmbed.set_footer(text="I am in " + str(numServers) + " servers. Made by uwutech")
+    helpEmbed.set_footer(text="I am in " + str(numServers) + " servers. Made by monketech")
 
     await ctx.send(embed=helpEmbed) 
 
@@ -352,7 +352,7 @@ async def getdaily(ctx, *guild):
     finalText.add_field(name = "Top 125", value = finalMsg7, inline=False)
 
   numServers = len(client.guilds)
-  finalText.set_footer(text="I am in " + str(numServers) + " servers. Made by uwutech")
+  finalText.set_footer(text="I am in " + str(numServers) + " servers. Made by monketech")
   await ctx.send(embed=finalText)
 
 
