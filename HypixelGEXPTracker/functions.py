@@ -1,10 +1,8 @@
 import requests
 import secrets
 
+API_KEY = secrets.uwutech
 
-API_KEY = secrets.uwusakura
-API_KEY2 = secrets.uwutech
-API_KEY3 = secrets.steven
 
 
 def get_guildInfo(guildName):
