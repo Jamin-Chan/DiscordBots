@@ -12,8 +12,8 @@ import functools
 client = commands.Bot(command_prefix = '&')
 client.remove_command("help")
 
-API_KEY2 = secrets.uwutech
 
+API_KEY2 = secrets.uwutech
 
 
 @client.event
@@ -42,6 +42,7 @@ async def help(ctx):
 
     await ctx.send(embed=helpEmbed) 
 
+    
 @functools.lru_cache()
 @client.command()
 async def getweekly(ctx, *guild):
@@ -197,7 +198,7 @@ async def getweekly(ctx, *guild):
     finalText.add_field(name = "Top 125", value = finalMsg7, inline=False)
 
   numServers = len(client.guilds)
-  finalText.set_footer(text="I am in " + str(numServers) + " servers. Made by uwutech")
+  finalText.set_footer(text="I am in " + str(numServers) + " servers. Made by monketech")
   await ctx.send(embed=finalText)
 
 
